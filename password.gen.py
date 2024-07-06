@@ -36,7 +36,7 @@ def special_ch():
     
     return selected_chars
 
-def inpcehck(prompt):
+def inputcheck(prompt):
     while True:
         response = input(prompt).strip().lower()
         if response in ['yes', 'y', 'no', 'n']:
@@ -45,9 +45,9 @@ def inpcehck(prompt):
             print("invalid response. please enter 'yes', 'no', 'y', or 'n'.")
 
 def included():
-    upper = inpcehck("include uppercase letters? (y/n): ")
-    lower = inpcehck("include lowercase letters? (y/n): ")
-    digits = inpcehck("include digits? (y/n): ")
+    upper = inputcheck("include uppercase letters? (y/n): ")
+    lower = inputcheck("include lowercase letters? (y/n): ")
+    digits = inputcheck("include digits? (y/n): ")
     return upper, lower, digits
 
 def easypass(length):
@@ -58,7 +58,7 @@ def easypass(length):
     return genpass(length, special_chars, upper, lower, digits)
 
 def main():
-    mode = inpcehck("would you like to use advanced mode? it allows you to edit the properties of the password. (y/n): ")
+    mode = inputcheck("would you like to use advanced mode? it allows you to edit the properties of the password. (y/n): ")
     
     while True:
         try:
